@@ -30,19 +30,7 @@
    }
 
    //this is you car class that is the object of the program
-   class car {
-   
-   //these are properties of the car object
-     public $make;
-     public $model;
-     public $year;
-     
-     public function __construct() {
-       //this is how to set internal default properties using $this
-       $this->make = 'ford';
-       $this->year = date("Y");
-     }
-     //this is a public function
+   abstract class vehicle {
      public function accelerate() {
        echo 'going faster </br>';
      }
@@ -51,18 +39,18 @@
      }
    }
 
+   class car extends vehicle {
+      //these are properties of the car object
+      public $make;
+      public $model;
+      public $year;
+
+      public function __construct() {
+      //this is how to set internal default properties
+        $this->make = 'ford';
+        $this->year = date("Y");
+     }
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-   
 ?>
